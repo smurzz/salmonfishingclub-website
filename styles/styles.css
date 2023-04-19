@@ -1,0 +1,200 @@
+/* 1. */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/* 2. Declaration */
+:root{
+    --main-color: hsl(345 27% 30%);
+    --secondary-color: hsl(45 29% 97%);
+
+    --title-font: 'Lora', sans-serif;
+    --main-font: 'GT America Trial', sans-serif;
+    --basic-font-size: 16px;
+}
+
+/* 3. Invoke */
+:root{
+    background-color: var(--secondary-color);
+    font-family: var(--main-font);
+    font-size: var(--basic-font-size);
+    line-height: 1.66;
+}
+
+/* 4. Main position */
+:root{
+    width: 70%;
+    margin: auto;
+}
+
+/* 5. Font and color of headings */
+h1,
+h2,
+h3{
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-weight: 300;
+}
+
+/* 6-8. Relative font size */
+h1{
+    text-shadow: 3px 4px 7px rgba(81,67,21,0.8);
+    font-size: 2.0rem;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+/* 9. Navigation styles */
+nav li{
+    list-style: none;
+}
+
+/* 10. Text style */
+main,
+article,
+p,
+ul,
+li, 
+a,
+form,
+label,
+legend,
+strong,
+em,
+code{
+    font-weight: 275;
+}
+
+/* ========================== (PERSONAL PROPERTIES) ==========================*/
+
+/* 11. List styles */
+ul{
+    list-style-type: circle;
+}
+
+/* 12. Adjusting image size to the parent element */
+img{
+    width: 100%;
+    max-height: 100%;
+    display: block;     
+}
+
+/* 13-15. Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-color: hsl(0, 0%, 0%);
+    border-style: solid;
+}
+  
+table td, 
+table th {
+    border-width: 2px;
+    border-color: hsl(0, 0%, 0%);
+    border-style: solid;
+    padding: 5px;
+}
+  
+table thead {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+/* 16. Original size of the logo image */
+#logo_image{
+    max-width: max-content;
+}
+
+
+/* 18-19. Links style */
+a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+/* 20-30. Form styles */
+form{
+	background: var(--secondary-color);
+	margin: 10px auto;
+	border-radius: 8px;
+}
+
+form fieldset{
+	border: none;
+}
+
+form legend {
+	margin-bottom: 10px;
+}
+
+form label {
+	display: block;
+	margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="email"],
+form textarea,
+form select {
+	border: none;
+	border-radius: 4px;
+	padding: 10px;
+	width: 100%;
+	background-color: hsl(30, 6%, 86%);
+	margin-bottom: 30px;
+}
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="email"]:focus,
+form textarea:focus,
+form select:focus{
+	background: hsl(30, 6%, 86%);
+}
+
+form input[type="submit"],
+form input[type="reset"],
+form input[type="button"]
+{
+    position: relative;
+	display: block;
+    font-family: var(--main-font);
+    font-size: var(--basic-font-size);
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 4px;
+	color: var(--secondary-color);
+	margin: 0 auto;
+	background: var(--main-color);
+	width: 20rem;
+	margin-bottom: 10px;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover,
+form input[type="button"]:hover
+{
+	background: hsl(345, 26%, 23%);
+}
+
+form input[type=radio]{
+    accent-color: var(--main-color);
+}
+
+form.input-radio{
+    display: inline-block;
+    margin-right: 2rem;
+}
