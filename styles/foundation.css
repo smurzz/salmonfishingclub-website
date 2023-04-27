@@ -1,0 +1,334 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+
+/**
+   * Remove the margin in all browsers.
+   */
+
+body {
+  margin: 0;
+}
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+
+main {
+  display: block;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+
+/* Text-level semantics
+     ========================================================================== */
+
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+
+a {
+  background-color: transparent;
+}
+
+
+/* Embedded content
+     ========================================================================== */
+
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/* ++++++++++++++++++++++++++++++++ Our properties ++++++++++++++++++++++++++++++++++ */
+
+/* 1. */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/* 2. Declaration */
+:root{
+    --main-color: hsl(345 27% 30%);
+    --secondary-color: hsl(45 29% 97%);
+
+    --title-font: 'Lora', sans-serif;
+    --main-font: 'GT America Trial', sans-serif;
+    --basic-font-size: 16px;
+}
+
+/* 3. Invoke */
+:root{
+    background-color: var(--secondary-color);
+    font-family: var(--main-font);
+    font-size: var(--basic-font-size);
+    line-height: 1.66;
+}
+
+/* 4. Main position */
+main{
+    width: 70%;
+    margin: auto;
+}
+
+/* 5. Font and color of headings */
+h1,
+h2,
+h3{
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-weight: 300;
+}
+
+/* 6-8. Relative font size */
+h1{
+    text-shadow: 3px 4px 7px rgba(81,67,21,0.8);
+    font-size: 2.2rem;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+/* 9. Navigation styles */
+nav li{
+    list-style: none;
+}
+
+/* 10. Text style */
+main,
+article,
+p,
+ul,
+li, 
+a,
+form,
+label,
+legend,
+strong,
+em,
+code{
+    font-weight: 275;
+}
+
+/* 11. List styles */
+ul{
+  list-style-type: circle;
+}
+
+/* 12. Adjusting image size to the parent element */
+img{
+  width: 100%;
+  max-height: 100%;
+  display: block;     
+}
+
+/* 18-19. Links style */
+a{
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--main-color);
+}
+
+/* Banner and Navigation (in processing) */
+header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#banner_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+nav a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: var(--basic-font-size);
+  text-transform: uppercase;
+  display: inline-block;
+  width: 15rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* 13-15. Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: hsl(0, 0%, 0%);
+  border-style: solid;
+}
+
+table td, 
+table th {
+  border-width: 2px;
+  border-color: hsl(0, 0%, 0%);
+  border-style: solid;
+  padding: 5px;
+}
+
+table thead {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
