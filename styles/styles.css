@@ -1,8 +1,8 @@
 /* ========================== (PERSONAL PROPERTIES) ==========================*/
 
 :root{
-    --main-color: hsl(345 27% 30%);
-    --secondary-color: hsl(45 29% 97%);
+    --main-color: hsl(345, 27%, 30%);
+    --secondary-color: hsl(45, 29%, 97%);
 
     --title-font: 'Lora', sans-serif;
     --main-font: 'GT America Trial', sans-serif;
@@ -85,4 +85,20 @@ form input[type=radio]{
 form.input-radio{
     display: inline-block;
     margin-right: 2rem;
+}
+
+figure {
+	text-align: center;
+	position: relative;
+}
+
+figcaption {
+	/*display: inline-block;*/
+	text-align: right;
+	position: absolute;
+	color: var(--secondary-color);
+	bottom: 0;
+	margin-left: 1rem;
+	/* z-index funktioniert nur für relative positionierte Elemente */
+	z-index: 1;
 }
