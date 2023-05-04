@@ -1,5 +1,166 @@
 @use "foundation" as fnd;
 
+/* Images */
+img {
+    border-style: none;
+    width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+figure {
+    text-align: center;
+    position: relative;
+}
+
+figcaption {
+    text-align: right;
+    position: absolute;
+    color: fnd.$secondary-color;
+    bottom: 0;
+    margin-left: 1rem;
+    z-index: 1;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: fnd.$main-color;
+    color: fnd.$secondary-color;
+    z-index: 1;
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.nav-links {
+    a {
+        color: fnd.$secondary-color;
+    }
+}
+
+.logo {
+    max-width: 70px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: fnd.$basic-font-size;
+
+    li {
+        padding: 5px 14px;
+
+        &:hover {
+            background-color: hsl(343, 27%, 26%);
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+    }
+}
+
+.gallery {
+    position: relative;
+
+    &:hover {
+        .dropdown {
+            display: block;
+        }
+    }
+}
+
+.dropdown {
+    background-color: fnd.$main-color;
+    padding: 1em 0;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+
+    li+li {
+        margin-top: 10px;
+    }
+
+    li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+
+        &:hover {
+            background-color: hsl(343, 27%, 26%);
+        }
+    }
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: fnd.$basic-font-size;
+    user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: fnd.$main-color;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+
+        li {
+            &:hover {
+                display: inline-block;
+                background-color: hsl(343, 27%, 26%);
+                transition: 0.3s ease;
+            }
+        }
+
+        li+li {
+            margin-top: 12px;
+        }
+    }
+
+    input[type=checkbox] {
+        &:checked~.menu {
+            display: block;
+        }
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+
+        li {
+            &:hover {
+                background-color: hsl(343, 27%, 26%);
+            }
+        }
+    }
+}
+
 form {
 	background: fnd.$secondary-color;
 	margin: 10px auto;
