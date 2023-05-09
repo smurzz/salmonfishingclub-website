@@ -1,0 +1,41 @@
+article > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+    .article-banner {
+        flex-grow: 1;
+        flex-basis: 400px;
+    }
+    .article-description {
+        flex-grow: 1;
+        flex-basis: 250px;
+    }
+}
+
+#travel-destination > article {
+    &:nth-child(odd) > div {
+        @include travel-article-flex(row);
+    }
+
+    &:nth-child(even) > div {
+        @include travel-article-flex(row-reverse);
+    }
+}
+
+@mixin travel-article-flex($direction) {
+    display: flex;
+    flex-flow: $direction wrap;
+    align-items: space-between;
+    gap: 2rem;
+  
+    .article-banner {
+      flex: 1 400px;
+    }
+  
+    .article-description {
+      flex: 1 250px;
+    }
+}

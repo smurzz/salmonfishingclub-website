@@ -1,4 +1,10 @@
 @use "foundation" as fnd;
+@use "layout";
+
+/* Articles */
+#travel-destination > article{
+    margin: 2rem 0;
+}
 
 /* Images */
 img {
@@ -20,6 +26,10 @@ figcaption {
     bottom: 0;
     margin-left: 1rem;
     z-index: 1;
+}
+
+#banner_img {
+    width: 100%;
 }
 
 /* Navigation */
