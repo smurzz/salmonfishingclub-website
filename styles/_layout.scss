@@ -15,16 +15,6 @@ article > div {
     }
 }
 
-#travel-destination > article {
-    &:nth-child(odd) > div {
-        @include travel-article-flex(row);
-    }
-
-    &:nth-child(even) > div {
-        @include travel-article-flex(row-reverse);
-    }
-}
-
 @mixin travel-article-flex($direction) {
     display: flex;
     flex-flow: $direction wrap;
@@ -37,5 +27,15 @@ article > div {
   
     .article-description {
       flex: 1 250px;
+    }
+}
+
+#travel-destination > article {
+    &:nth-child(odd) > div {
+        @include travel-article-flex(row);
+    }
+
+    &:nth-child(even) > div {
+        @include travel-article-flex(row-reverse);
     }
 }
