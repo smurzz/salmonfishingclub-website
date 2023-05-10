@@ -25,7 +25,6 @@ figcaption {
     color: fnd.$secondary-color;
     bottom: 0;
     margin-left: 1rem;
-    z-index: 1;
 }
 
 #banner_img {
@@ -193,6 +192,8 @@ input[type=checkbox] {
     }
 }
 
+/* Form */
+
 form {
 	background: fnd.$secondary-color;
 	margin: 10px auto;
@@ -222,29 +223,31 @@ form {
 			background: hsl(30, 6%, 86%);
 		}
 	}
-	form input[type="submit"],
-    form input[type="reset"],
-    form input[type="button"] {
-		position: relative;
-		display: block;
-		font-family: fnd.$main-font;
-		font-size: fnd.$basic-font-size;
-		padding: 1rem 2rem 1rem 2rem;
-		border-radius: 4px;
-		color: fnd.$secondary-color;
-		margin: 0 auto;
-		background: fnd.$main-color;
-		width: 20rem;
-		margin-bottom: 10px;
-		&:hover {
-			background: hsl(345, 26%, 23%);
-		}
-	}
-	input[type=radio] {
+    input[type=radio] {
 		accent-color: fnd.$main-color;
 	}
-}
-form.input-radio {
-	display: inline-block;
-	margin-right: 2rem;
+    .input-radio {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    .buttons {
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"]{
+            position: relative;
+            display: block;
+            font-family: fnd.$main-font;
+            font-size: fnd.$basic-font-size;
+            padding: 1rem 2rem 1rem 2rem;
+            border-radius: 4px;
+            color: fnd.$secondary-color;
+            margin: 0 auto;
+            background: fnd.$main-color;
+            width: 20rem;
+            margin-bottom: 10px;
+            &:hover {
+                background: hsl(345, 26%, 23%);
+            }
+        }
+    }
 }

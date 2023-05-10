@@ -280,7 +280,6 @@ figcaption {
   color: hsl(45, 29%, 97%);
   bottom: 0;
   margin-left: 1rem;
-  z-index: 1;
 }
 
 #banner_img {
@@ -419,6 +418,7 @@ input[type=checkbox] {
     background-color: hsl(343, 27%, 26%);
   }
 }
+/* Form */
 form {
   background: hsl(45, 29%, 97%);
   margin: 10px auto;
@@ -453,9 +453,16 @@ form textarea:focus,
 form select:focus {
   background: hsl(30, 6%, 86%);
 }
-form form input[type=submit],
-form form input[type=reset],
-form form input[type=button] {
+form input[type=radio] {
+  accent-color: hsl(345, 27%, 30%);
+}
+form .input-radio {
+  display: inline-block;
+  margin-right: 2rem;
+}
+form .buttons input[type=submit],
+form .buttons input[type=reset],
+form .buttons input[type=button] {
   position: relative;
   display: block;
   font-family: "GT America Trial", sans-serif;
@@ -468,16 +475,8 @@ form form input[type=button] {
   width: 20rem;
   margin-bottom: 10px;
 }
-form form input[type=submit]:hover,
-form form input[type=reset]:hover,
-form form input[type=button]:hover {
+form .buttons input[type=submit]:hover,
+form .buttons input[type=reset]:hover,
+form .buttons input[type=button]:hover {
   background: hsl(345, 26%, 23%);
-}
-form input[type=radio] {
-  accent-color: hsl(345, 27%, 30%);
-}
-
-form.input-radio {
-  display: inline-block;
-  margin-right: 2rem;
 }/*# sourceMappingURL=style.css.map */
