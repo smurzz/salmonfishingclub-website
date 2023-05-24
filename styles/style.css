@@ -1,7 +1,6 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Variables */ /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
-/* Variables */
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -37,12 +36,12 @@ main {
    * `article` contexts in Chrome, Firefox, and Safari.
    */
 h1 {
-  margin: 0.67em 0;
+  color: hsl(45, 29%, 97%);
   font-family: "Lora", sans-serif;
   font-weight: 300;
-  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
   font-size: 3.2rem;
-  color: hsl(45, 29%, 97%);
+  margin: 0.67em 0;
+  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -198,12 +197,7 @@ table {
   border-color: hsl(0, 0%, 0%);
   border-style: solid;
 }
-table td {
-  border-width: 2px;
-  border-color: hsl(0, 0%, 0%);
-  border-style: solid;
-  padding: 5px;
-}
+table td,
 table th {
   border-width: 2px;
   border-color: hsl(0, 0%, 0%);
@@ -215,45 +209,57 @@ table thead {
   color: hsl(45, 29%, 97%);
 }
 
+/* article > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+    .article-banner {
+        flex-grow: 1;
+        flex-basis: 400px;
+    }
+    .article-description {
+        flex-grow: 1;
+        flex-basis: 250px;
+    }
+}
+
+#travel-destination > article {
+    &:nth-child(odd) > div {
+        @include mixins.travel-article-flex(row);
+    }
+
+    &:nth-child(even) > div {
+        @include mixins.travel-article-flex(row-reverse);
+    }
+} */
 article > div {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 4rem;
+  justify-items: space-between;
   align-items: center;
-  gap: 4rem;
-}
-article > div .article-banner {
-  flex-grow: 1;
-  flex-basis: 400px;
-}
-article > div .article-description {
-  flex-grow: 1;
-  flex-basis: 250px;
 }
 
 #travel-destination > article:nth-child(odd) > div {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
   align-items: space-between;
-  gap: 2rem;
 }
 #travel-destination > article:nth-child(odd) > div .article-banner {
-  flex: 1 400px;
-}
-#travel-destination > article:nth-child(odd) > div .article-description {
-  flex: 1 250px;
+  grid-row: 1;
 }
 #travel-destination > article:nth-child(even) > div {
-  display: flex;
-  flex-flow: row-reverse wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
   align-items: space-between;
-  gap: 2rem;
 }
 #travel-destination > article:nth-child(even) > div .article-banner {
-  flex: 1 400px;
-}
-#travel-destination > article:nth-child(even) > div .article-description {
-  flex: 1 250px;
+  grid-row: 0;
 }
 
 /* Articles */

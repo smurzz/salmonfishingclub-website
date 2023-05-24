@@ -1,5 +1,6 @@
-@use "foundation" as fnd;
+@use "foundation";
 @use "layout";
+@use "vars";
 
 /* Articles */
 #travel-destination > article{
@@ -22,7 +23,7 @@ figure {
 figcaption {
     text-align: right;
     position: absolute;
-    color: fnd.$secondary-color;
+    color: vars.$secondary-color;
     bottom: 0;
     margin-left: 1rem;
 }
@@ -41,7 +42,7 @@ figcaption {
     justify-content: space-between;
     padding: 0.5rem;
     background-color: transparent;
-    color: fnd.$secondary-color;
+    color: vars.$secondary-color;
     z-index: 1;
 
     a {
@@ -54,12 +55,12 @@ figcaption {
 }
 
 .navbar.colored{
-    background-color: fnd.$main-color;
+    background-color: vars.$main-color;
 }
 
 .nav-links {
     a {
-        color: fnd.$secondary-color;
+        color: vars.$secondary-color;
     }
 }
 
@@ -72,7 +73,7 @@ figcaption {
 .menu {
     display: flex;
     gap: 1em;
-    font-size: fnd.$basic-font-size;
+    font-size: vars.$basic-font-size;
 
     li {
         padding: 5px 14px;
@@ -127,7 +128,7 @@ figcaption {
 }
 
 .dropdown.colored{
-    background-color: fnd.$main-color;
+    background-color: vars.$main-color;
     li{
         &:hover{
             background-color: hsl(343, 27%, 26%);
@@ -141,7 +142,7 @@ input[type=checkbox] {
 
 .hamburger {
     display: none;
-    font-size: fnd.$basic-font-size;
+    font-size: vars.$basic-font-size;
     user-select: none;
 }
 
@@ -150,7 +151,7 @@ input[type=checkbox] {
     .menu {
         display: none;
         position: absolute;
-        background-color: fnd.$main-color;
+        background-color: vars.$main-color;
         right: 0;
         left: 0;
         text-align: center;
@@ -195,7 +196,7 @@ input[type=checkbox] {
 /* Form */
 
 form {
-	background: fnd.$secondary-color;
+	background: vars.$secondary-color;
 	margin: 10px auto;
 	border-radius: 8px;
 	fieldset {
@@ -224,7 +225,7 @@ form {
 		}
 	}
     input[type=radio] {
-		accent-color: fnd.$main-color;
+		accent-color: vars.$main-color;
 	}
     .input-radio {
         display: inline-block;
@@ -236,13 +237,13 @@ form {
         input[type="button"]{
             position: relative;
             display: block;
-            font-family: fnd.$main-font;
-            font-size: fnd.$basic-font-size;
+            font-family: vars.$main-font;
+            font-size: vars.$basic-font-size;
             padding: 1rem 2rem 1rem 2rem;
             border-radius: 4px;
-            color: fnd.$secondary-color;
+            color: vars.$secondary-color;
             margin: 0 auto;
-            background: fnd.$main-color;
+            background: vars.$main-color;
             width: 20rem;
             margin-bottom: 10px;
             &:hover {

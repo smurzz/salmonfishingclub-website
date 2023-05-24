@@ -1,12 +1,8 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
-/* Variables */
-$main-color: hsl(345 27% 30%);
-$secondary-color: hsl(45 29% 97%);
-$title-font: 'Lora', sans-serif;
-$main-font: 'GT America Trial', sans-serif;
-$basic-font-size: 16px;
+@use "mixins";
+@use "vars";
 
 /**
  * 1. Correct the line height in all browsers.
@@ -43,12 +39,9 @@ main {
    * `article` contexts in Chrome, Firefox, and Safari.
    */
 h1 {
+    @include mixins.headers($color: vars.$secondary-color, $font-size: 3.2rem);
     margin: 0.67em 0;
-    font-family: $title-font;
-    font-weight: 300;
     text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
-    font-size: 3.2rem;
-    color: $secondary-color;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,11 +57,11 @@ a {
     background-color: transparent;
     font-weight: 275;
     text-decoration: none;
-    color: $main-color;
+    color: vars.$main-color;
 
     &:hover {
         text-decoration: underline;
-        color: $main-color;
+        color: vars.$main-color;
     }
 }
 
@@ -79,26 +72,17 @@ a {
    * 2. Remove the margin in Firefox and Safari.
    */
 input {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
+    @include mixins.input-select-textarea;
     overflow: visible;
 }
 
 select {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
+    @include mixins.input-select-textarea;
     text-transform: none;
 }
 
 textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
+    @include mixins.input-select-textarea;
     overflow: auto;
 }
 
@@ -144,25 +128,19 @@ legend {
 
 /* 2. Declaration */
 :root {
-    background-color: $secondary-color;
-    font-family: $main-font;
-    font-size: $basic-font-size;
+    background-color: vars.$secondary-color;
+    font-family: vars.$main-font;
+    font-size: vars.$basic-font-size;
     line-height: 1.66;
 }
 
 /* 5. Font and color of headings */
 h2 {
-    color: $main-color;
-    font-family: $title-font;
-    font-weight: 300;
-    font-size: 2.8rem;
+    @include mixins.headers;
 }
 
 h3 {
-    color: $main-color;
-    font-family: $title-font;
-    font-weight: 300;
-    font-size: 2.0rem;
+    @include mixins.headers($font-size: 2.0rem);
 }
 
 article{
@@ -205,13 +183,7 @@ table {
     border-color: hsl(0, 0%, 0%);
     border-style: solid;
 
-    td {
-        border-width: 2px;
-        border-color: hsl(0, 0%, 0%);
-        border-style: solid;
-        padding: 5px;
-    }
-
+    td, 
     th {
         border-width: 2px;
         border-color: hsl(0, 0%, 0%);
@@ -220,8 +192,8 @@ table {
     }
 
     thead {
-        background-color: $main-color;
-        color: $secondary-color;
+        background-color: vars.$main-color;
+        color: vars.$secondary-color;
     }
 }
 

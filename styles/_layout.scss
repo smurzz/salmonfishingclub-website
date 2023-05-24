@@ -1,4 +1,8 @@
-article > div {
+@use "mixins";
+
+// FLEX-Layout
+
+/* article > div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -15,27 +19,31 @@ article > div {
     }
 }
 
-@mixin travel-article-flex($direction) {
-    display: flex;
-    flex-flow: $direction wrap;
-    align-items: space-between;
-    gap: 2rem;
-  
-    .article-banner {
-      flex: 1 400px;
+#travel-destination > article {
+    &:nth-child(odd) > div {
+        @include mixins.travel-article-flex(row);
     }
-  
-    .article-description {
-      flex: 1 250px;
+
+    &:nth-child(even) > div {
+        @include mixins.travel-article-flex(row-reverse);
     }
+} */
+
+// GRID-Layout
+article > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 4rem;
+    justify-items: space-between;
+    align-items: center; 
 }
 
 #travel-destination > article {
     &:nth-child(odd) > div {
-        @include travel-article-flex(row);
+        @include mixins.travel-article-grid(1);
     }
-
+    
     &:nth-child(even) > div {
-        @include travel-article-flex(row-reverse);
+        @include mixins.travel-article-grid(0);
     }
 }
