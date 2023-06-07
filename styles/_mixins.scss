@@ -4,7 +4,7 @@
 @mixin travel-article-flex($direction) {
     display: flex;
     flex-flow: $direction wrap;
-    align-items: space-between;
+    align-items: center;
     gap: 2rem;
   
     .article-banner {
@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
-    align-items: space-between;
+    align-items: center;
     
     .article-banner {
         grid-row: $grid-row;

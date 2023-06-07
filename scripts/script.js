@@ -1,6 +1,8 @@
 const navbar = document.querySelector('.navbar');
 const dropdown = document.querySelector('.dropdown');
 const menu = document.querySelector('.menu');
+const bannerContainer = document.querySelector('header');
+const heading = document.querySelector('header h1');
 let prevScrollPos = window.pageYOffset;
 
 window.addEventListener('scroll', () => {
@@ -19,5 +21,22 @@ window.addEventListener('scroll', () => {
         }
     }
     prevScrollPos = currentScrollPos;
+});
+
+function adjustHeadingSize() {
+    const ratio = 0.04;
+
+    const bannerWidth = bannerContainer.offsetWidth;
+    const headingSize = bannerWidth * ratio;
+    heading.style.fontSize = headingSize + 'px';
+}
+
+window.addEventListener('DOMContentLoaded', adjustHeadingSize);
+window.addEventListener('resize', adjustHeadingSize);
+
+lightbox.option({
+    resizeDuration: 200,
+    wrapAround: true,
+    disableScrolling: true,
 });
 

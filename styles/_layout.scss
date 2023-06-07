@@ -2,7 +2,7 @@
 
 // FLEX-Layout
 
-/* article > div {
+article > div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -27,8 +27,9 @@
     &:nth-child(even) > div {
         @include mixins.travel-article-flex(row-reverse);
     }
-} */
+}
 
+/* 
 // GRID-Layout
 article > div {
     display: grid;
@@ -47,3 +48,4 @@ article > div {
         @include mixins.travel-article-grid(0);
     }
 }
+ */

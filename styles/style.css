@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Variables */ /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -29,23 +30,6 @@ main {
   width: 80%;
   margin: auto;
   font-weight: 275;
-}
-
-/**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
-h1 {
-  color: hsl(45, 29%, 97%);
-  font-family: "Lora", sans-serif;
-  font-weight: 300;
-  font-size: 3.2rem;
-  margin: 0.67em 0;
-  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* Text-level semantics
@@ -187,6 +171,22 @@ header {
   width: 100%;
   position: relative;
   text-align: center;
+  /**
+  * Correct the font size and margin on `h1` elements within `section` and
+  * `article` contexts in Chrome, Firefox, and Safari.
+  */
+}
+header h1 {
+  color: hsl(45, 29%, 97%);
+  font-family: "Lora", sans-serif;
+  font-weight: 300;
+  font-size: 3.2rem;
+  margin: 0.67em 0;
+  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 13-15. Table styles */
@@ -209,59 +209,67 @@ table thead {
   color: hsl(45, 29%, 97%);
 }
 
-/* article > div {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
+article > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+article > div .article-banner {
+  flex-grow: 1;
+  flex-basis: 400px;
+}
+article > div .article-description {
+  flex-grow: 1;
+  flex-basis: 250px;
+}
 
-    .article-banner {
-        flex-grow: 1;
-        flex-basis: 400px;
-    }
-    .article-description {
-        flex-grow: 1;
-        flex-basis: 250px;
-    }
+#travel-destination > article:nth-child(odd) > div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 2rem;
+}
+#travel-destination > article:nth-child(odd) > div .article-banner {
+  flex: 1 0 400px;
+}
+#travel-destination > article:nth-child(odd) > div .article-description {
+  flex: 1 0 250px;
+}
+#travel-destination > article:nth-child(even) > div {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  align-items: center;
+  gap: 2rem;
+}
+#travel-destination > article:nth-child(even) > div .article-banner {
+  flex: 1 0 400px;
+}
+#travel-destination > article:nth-child(even) > div .article-description {
+  flex: 1 0 250px;
+}
+
+/* 
+// GRID-Layout
+article > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 4rem;
+    justify-items: space-between;
+    align-items: center; 
 }
 
 #travel-destination > article {
     &:nth-child(odd) > div {
-        @include mixins.travel-article-flex(row);
+        @include mixins.travel-article-grid(1);
     }
 
     &:nth-child(even) > div {
-        @include mixins.travel-article-flex(row-reverse);
+        @include mixins.travel-article-grid(0);
     }
-} */
-article > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 4rem;
-  justify-items: space-between;
-  align-items: center;
 }
-
-#travel-destination > article:nth-child(odd) > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
-  align-items: space-between;
-}
-#travel-destination > article:nth-child(odd) > div .article-banner {
-  grid-row: 1;
-}
-#travel-destination > article:nth-child(even) > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
-  align-items: space-between;
-}
-#travel-destination > article:nth-child(even) > div .article-banner {
-  grid-row: 0;
-}
-
+ */
 /* Articles */
 #travel-destination > article {
   margin: 2rem 0;
@@ -288,10 +296,66 @@ figcaption {
   margin-left: 1rem;
 }
 
+/* Quelle für die Fotogalerie: https://www.youtube.com/watch?v=Z2q9ErH2-bI&ab_channel=DesignTorch */
+#golden-dorado-gallery {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-gallery {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+  align-items: normal;
+}
+.grid-gallery .grid-item {
+  position: relative;
+  background-color: hsl(45, 29%, 97%);
+  overflow: hidden;
+}
+.grid-gallery .grid-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.grid-gallery .grid-item a {
+  cursor: zoom-in;
+}
+.grid-gallery .grid-item:hover img {
+  transform: scale(1.1);
+}
+.grid-gallery .grid-item:nth-child(3n-2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.logo img {
+  max-width: 80px;
+}
+
 #banner_img {
   width: 100%;
 }
 
+/* APPLYING MEDIA QUERIES - GALLERY */
+@media (max-width: 768px) {
+  .grid-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+  }
+  .grid-gallery .grid-item:nth-child(3n-2) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
 /* Navigation */
 .navbar {
   display: flex;
@@ -390,7 +454,7 @@ input[type=checkbox] {
           user-select: none;
 }
 
-/* APPLYING MEDIA QUERIES */
+/* APPLYING MEDIA QUERIES - NAV */
 @media (max-width: 768px) {
   .menu {
     display: none;
