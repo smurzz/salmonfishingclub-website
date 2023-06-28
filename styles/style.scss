@@ -75,8 +75,15 @@ figcaption {
 }
 
 .logo{
+    container-type: inline-size;
     img{
-        max-width: 80px;
+        width: 80px;
+    }
+}
+
+@container (max-width: 560px) {
+    .logo img {
+        width: 60px;
     }
 }
 

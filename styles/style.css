@@ -337,10 +337,18 @@ figcaption {
   grid-row: span 2;
 }
 
+.logo {
+  container-type: inline-size;
+}
 .logo img {
-  max-width: 80px;
+  width: 80px;
 }
 
+@container (max-width: 560px) {
+  .logo img {
+    width: 60px;
+  }
+}
 #banner_img {
   width: 100%;
 }
