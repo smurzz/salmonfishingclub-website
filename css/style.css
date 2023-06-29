@@ -6,6 +6,13 @@
   margin: 2rem 0;
 }
 
+/* Variables */
+/* Import base stylesheets */
+/* Articles */
+#travel-destination > article {
+  margin: 2rem 0;
+}
+
 /* Variables */ /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -290,6 +297,7 @@ article > div {
 .navbar__menu-list li {
   padding: 5px 14px;
 }
+
 .navbar__menu-list li:hover {
   background-color: transparent;
   border-radius: 5px;
@@ -300,6 +308,8 @@ article > div {
   background-color: hsl(343, 27%, 26%);
 }
 
+/* Variables */
+/* Variables */
 /* Variables */
 /* Variables */
 /* Navigation */
@@ -337,6 +347,7 @@ article > div {
   object-fit: cover;
 }
 
+/* Variables */
 /* Variables */
 /* Form */
 form {
