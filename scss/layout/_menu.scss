@@ -1,0 +1,26 @@
+@import '../theme/vars';
+
+/* Menu */
+.navbar__menu-list {
+  display: flex;
+  gap: 1em;
+  font-size: $basic-font-size;
+
+  li {
+    padding: 5px 14px;
+
+    &:hover {
+      background-color: transparent;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.navbar__menu-list.colored{
+  li{
+    &:hover {
+      background-color: hsl(343, 27%, 26%);
+    }
+  }
+}

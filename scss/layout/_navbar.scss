@@ -1,0 +1,33 @@
+@import '../theme/vars';
+
+/* Navigation */
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: $secondary-color;
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+.navbar.colored{
+  background-color: $main-color;
+}
+
+.navbar__nav-links {
+  a {
+    color: $secondary-color;
+  }
+}

@@ -1,0 +1,45 @@
+@use "../theme/vars";
+
+// placement of articals in the "travel" article with flex
+@mixin travel-article-flex($direction) {
+    display: flex;
+    flex-flow: $direction wrap;
+    align-items: center;
+    gap: 2rem;
+  
+    .article__banner {
+      flex: 1 0 400px;
+    }
+  
+    .article__description {
+      flex: 1 0 250px;
+    }
+}
+
+// placement of articals in the "travel" article with grid
+@mixin travel-article-grid($grid-row) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    
+    .article__banner {
+        grid-row: $grid-row;
+    }
+}
+
+// input, select, textarea
+@mixin input-select-textarea($font-family: inherit, $font-size: 100%, $line-height: 1.15, $margin: 0){
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    margin: $margin;
+}
+
+// h2, h3 headers 
+@mixin headers($color: vars.$main-color, $font-family: vars.$title-font, $font-weight: 300, $font-size: 2.8rem){
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}

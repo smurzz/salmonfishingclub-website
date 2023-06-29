@@ -1,0 +1,11 @@
+@import '../theme/vars';
+
+input[type=checkbox] {
+  display: none;
+}
+
+.navbar__hamburger {
+  display: none;
+  font-size: $basic-font-size;
+  user-select: none;
+}
