@@ -532,7 +532,7 @@ input[type=checkbox] {
 }
 /* APPLYING MEDIA QUERIES - NAV */
 @media (max-width: 768px) {
-  .nav__menu {
+  .navbar__menu-list {
     display: none;
     position: absolute;
     background-color: hsl(345, 27%, 30%);
@@ -541,15 +541,15 @@ input[type=checkbox] {
     text-align: center;
     padding: 16px 0;
   }
-  .nav__menu li:hover {
+  .navbar__menu-list li:hover {
     display: inline-block;
     background-color: hsl(343, 27%, 26%);
     transition: 0.3s ease;
   }
-  .nav__menu li + li {
+  .navbar__menu-list li + li {
     margin-top: 12px;
   }
-  input[type=checkbox]:checked ~ .nav__menu {
+  input[type=checkbox]:checked ~ .navbar__menu-list {
     display: block;
   }
   .navbar__hamburger {

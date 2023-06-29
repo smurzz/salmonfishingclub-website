@@ -21,7 +21,7 @@
 
 /* APPLYING MEDIA QUERIES - NAV */
 @media (max-width: 768px) {
-  .nav__menu {
+  .navbar__menu-list {
     display: none;
     position: absolute;
     background-color:  $main-color; // Use the variable directly
@@ -44,7 +44,7 @@
   }
 
   input[type=checkbox] {
-    &:checked~.nav__menu {
+    &:checked~.navbar__menu-list{
       display: block;
     }
   }
