@@ -1,0 +1,90 @@
+@import '../theme/vars';
+
+/* Quelle für die Fotogalerie: https://www.youtube.com/watch?v=Z2q9ErH2-bI&ab_channel=DesignTorch */
+#golden-dorado-gallery{
+  margin: 0;
+  padding: 0;
+}
+.grid-gallery{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+  align-items: normal;
+
+  .grid-gallery__item{
+    position: relative;
+    background-color: $secondary-color;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    a{
+      cursor: zoom-in;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    &:nth-child(3n - 2){
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+}
+
+
+.navbar__gallery {
+  position: relative;
+
+  &:hover {
+    .navbar__dropdown-list {
+      display: block;
+    }
+  }
+}
+
+.navbar__dropdown-list {
+  background-color: transparent;
+  padding: 1em 0;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+
+  li + li {
+    margin-top: 10px;
+  }
+
+  li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.navbar__dropdown-list.colored {
+  background-color: $main-color;
+  li {
+    &:hover {
+      background-color: hsl(343, 27%, 26%);
+    }
+  }
+}

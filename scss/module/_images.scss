@@ -1,0 +1,22 @@
+@import '../theme/vars';
+
+/* Images */
+img {
+  border-style: none;
+  width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+figure {
+  text-align: center;
+  position: relative;
+}
+
+figcaption {
+  text-align: right;
+  position: absolute;
+  color: $secondary-color;
+  bottom: 0;
+  margin-left: 1rem;
+}

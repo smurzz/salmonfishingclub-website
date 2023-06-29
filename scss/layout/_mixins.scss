@@ -1,4 +1,4 @@
-@use "vars";
+@use "../theme/vars";
 
 // placement of articals in the "travel" article with flex
 @mixin travel-article-flex($direction) {
@@ -7,11 +7,11 @@
     align-items: center;
     gap: 2rem;
   
-    .article-banner {
+    .article__banner {
       flex: 1 0 400px;
     }
   
-    .article-description {
+    .article__description {
       flex: 1 0 250px;
     }
 }
@@ -23,7 +23,7 @@
     grid-gap: 2rem;
     align-items: center;
     
-    .article-banner {
+    .article__banner {
         grid-row: $grid-row;
     }
 }
