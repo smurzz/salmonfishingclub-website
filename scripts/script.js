@@ -1,6 +1,6 @@
 const navbar = document.querySelector('.navbar');
-const dropdown = document.querySelector('.dropdown');
-const menu = document.querySelector('.menu');
+const dropdown = document.querySelector('.navbar__dropdown-list');
+const menu = document.querySelector('.navbar__menu-list');
 const bannerContainer = document.querySelector('header');
 const heading = document.querySelector('header h1');
 let prevScrollPos = window.pageYOffset;

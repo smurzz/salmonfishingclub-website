@@ -1,0 +1,67 @@
+@import '../theme/vars';
+
+/* APPLYING MEDIA QUERIES - GALLERY */
+@media (max-width: 768px) {
+  .grid-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+
+    .grid-gallery__item {
+      &:nth-child(3n - 2) {
+        grid-column: unset;
+        grid-row: unset;
+      }
+    }
+  }
+}
+
+/* APPLYING MEDIA QUERIES - NAV */
+@media (max-width: 768px) {
+  .navbar {
+    background-color: $main-color;
+  }
+
+  .navbar__menu-list {
+    display: none;
+    position: absolute;
+    background-color: $main-color; // Use the variable directly
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+
+    li {
+      &:hover {
+        display: inline-block;
+        background-color: hsl(343, 27%, 26%);
+        transition: 0.3s ease;
+      }
+    }
+
+    li+li {
+      margin-top: 12px;
+    }
+  }
+
+  input[type=checkbox] {
+    &:checked~.navbar__menu-list {
+      display: block;
+    }
+  }
+
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .navbar__dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+
+    li {
+      &:hover {
+        background-color: hsl(343, 27%, 26%);
+      }
+    }
+  }
+}
