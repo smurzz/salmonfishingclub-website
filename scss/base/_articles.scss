@@ -3,3 +3,16 @@
 #travel-destination > article{
   margin: 2rem 0;
 }
+
+/* article__description erst bei Eintritt in den viewport sichtbar machen */
+.article__description{
+  opacity: .2;
+  transition: opacity, 2s;
+}
+
+
+/* wird über js zugewiesen, wenn das Element
+in den viewport kommt */
+.loadVisible{
+  opacity: 1;
+}

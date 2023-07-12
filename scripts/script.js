@@ -40,3 +40,44 @@ lightbox.option({
     disableScrolling: true,
 });
 
+
+
+(function init(){
+    "use strict";
+    const articles = Array.from(document.getElementsByClassName("article__description"));
+    // console.log(articles);
+
+    // data-attributes auslesen
+    articles.forEach(article => {
+        console.log(article.dataset);
+        console.log(article.dataset.section);
+    });
+    console.clear();
+
+    // callback deklarieren
+    function loadArticles(entries){
+        console.log("is visible");
+        console.log(entries);
+        const[entry] = entries;
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("loadVisible");
+        }
+        else
+            entry.target.classList.remove("loadVisible");
+    }
+
+    const options = {
+        root : null,
+        rootMargin: "0px",
+        threshold: [.2,.5,1]
+
+    };
+
+    const observer = new IntersectionObserver(loadArticles, options);
+
+    articles.forEach(article => {
+        observer.observe(article);
+    });
+
+})();
