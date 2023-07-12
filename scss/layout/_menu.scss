@@ -1,10 +1,10 @@
-@import '../theme/vars';
+@use '../base/vars';
 
 /* Menu */
 .navbar__menu-list {
   display: flex;
   gap: 1em;
-  font-size: $basic-font-size;
+  font-size: vars.$basic-font-size;
 
   li {
     padding: 5px 14px;

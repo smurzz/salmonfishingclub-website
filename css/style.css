@@ -1,13 +1,4 @@
 @charset "UTF-8";
-/* Variables */
-/* Import base stylesheets */
-/* Articles */
-#travel-destination > article {
-  margin: 2rem 0;
-}
-
-/* Variables */
-/* Import base stylesheets */
 /* Articles */
 #travel-destination > article {
   margin: 2rem 0;
@@ -224,8 +215,6 @@ table thead {
   color: hsl(45, 29%, 97%);
 }
 
-/* Import layout */
-/* Variables */
 article > div {
   display: flex;
   flex-flow: row wrap;
@@ -287,7 +276,6 @@ article > div {
     }
 }
  */
-/* Variables */
 /* Menu */
 .navbar__menu-list {
   display: flex;
@@ -297,7 +285,6 @@ article > div {
 .navbar__menu-list li {
   padding: 5px 14px;
 }
-
 .navbar__menu-list li:hover {
   background-color: transparent;
   border-radius: 5px;
@@ -308,10 +295,6 @@ article > div {
   background-color: hsl(343, 27%, 26%);
 }
 
-/* Variables */
-/* Variables */
-/* Variables */
-/* Variables */
 /* Navigation */
 .navbar {
   display: flex;
@@ -340,15 +323,12 @@ article > div {
   color: hsl(45, 29%, 97%);
 }
 
-/* Import module */
 #banner_img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Variables */
-/* Variables */
 /* Form */
 form {
   background: hsl(45, 29%, 97%);
@@ -412,7 +392,6 @@ form .article__buttons input[type=button]:hover {
   background: hsl(345, 26%, 23%);
 }
 
-/* Variables */
 /* Quelle für die Fotogalerie: https://www.youtube.com/watch?v=Z2q9ErH2-bI&ab_channel=DesignTorch */
 #golden-dorado-gallery {
   margin: 0;
@@ -487,7 +466,6 @@ form .article__buttons input[type=button]:hover {
   background-color: hsl(343, 27%, 26%);
 }
 
-/* Variables */
 /* Images */
 img {
   border-style: none;
@@ -551,8 +529,6 @@ figure img:hover + figcaption {
   transform: scale(1.2);
 }
 
-/* Import state */
-/* Variables */
 input[type=checkbox] {
   display: none;
 }
@@ -563,7 +539,6 @@ input[type=checkbox] {
   user-select: none;
 }
 
-/* Variables */
 /* APPLYING MEDIA QUERIES - GALLERY */
 @media (max-width: 768px) {
   .grid-gallery {
@@ -612,5 +587,9 @@ input[type=checkbox] {
     background-color: hsl(343, 27%, 26%);
   }
 }
+/*  base stylesheets */
+/* layout */
+/* module */
+/* state */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-@import '../theme/vars';
+@use '../base/vars';
 
 /* Navigation */
 .navbar {
@@ -10,7 +10,7 @@
   justify-content: space-between;
   padding: 0.5rem;
   background-color: transparent;
-  color: $secondary-color;
+  color:  vars.$secondary-color;
   z-index: 1;
 
   a {
@@ -23,11 +23,11 @@
 }
 
 .navbar.colored{
-  background-color: $main-color;
+  background-color:  vars.$main-color;
 }
 
 .navbar__nav-links {
   a {
-    color: $secondary-color;
+    color:  vars.$secondary-color;
   }
 }

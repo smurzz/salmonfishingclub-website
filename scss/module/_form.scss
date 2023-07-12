@@ -1,9 +1,9 @@
-@import '../theme/vars';
+@use '../base/vars';
 
 /* Form */
 
 form {
-  background: $secondary-color;
+  background:  vars.$secondary-color;
   margin: 10px auto;
   border-radius: 8px;
   fieldset {
@@ -32,7 +32,7 @@ form {
     }
   }
   input[type=radio] {
-    accent-color: $main-color;
+    accent-color:  vars.$main-color;
   }
   .article__input-radio {
     display: inline-block;
@@ -44,13 +44,13 @@ form {
     input[type="button"]{
       position: relative;
       display: block;
-      font-family: $main-font;
-      font-size: $basic-font-size;
+      font-family:  vars.$main-font;
+      font-size:  vars.$basic-font-size;
       padding: 1rem 2rem 1rem 2rem;
       border-radius: 4px;
-      color: $secondary-color;
+      color:  vars.$secondary-color;
       margin: 0 auto;
-      background: $main-color;
+      background:  vars.$main-color;
       width: 20rem;
       margin-bottom: 10px;
       &:hover {

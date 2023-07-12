@@ -1,4 +1,4 @@
-@import '../theme/vars';
+@use '../base/vars';
 
 input[type=checkbox] {
   display: none;
@@ -6,6 +6,6 @@ input[type=checkbox] {
 
 .navbar__hamburger {
   display: none;
-  font-size: $basic-font-size;
+  font-size:  vars.$basic-font-size;
   user-select: none;
 }

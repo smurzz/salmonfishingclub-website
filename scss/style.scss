@@ -1,22 +1,21 @@
 
-@import 'theme/vars';
+/*  base stylesheets */
+@use 'base/articles';
+@use 'base/foundation';
+@use 'base/vars';
 
-/* Import base stylesheets */
-@import 'base/articles';
-@import 'base/foundation';
-
-/* Import layout */
-@import 'layout/layout';
-
+/* layout */
+@use 'layout/layout';
 
 
-/* Import module */
-@import 'module/module';
+
+/* module */
+@use 'module/module';
 
 
-/* Import state */
-@import 'state/hamburger';
-@import 'state/media-queries';
+/* state */
+@use'state/hamburger';
+@use 'state/media-queries';
 
 
 

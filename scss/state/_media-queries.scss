@@ -1,4 +1,4 @@
-@import '../theme/vars';
+@use '../base/vars';
 
 /* APPLYING MEDIA QUERIES - GALLERY */
 @media (max-width: 768px) {
@@ -18,13 +18,13 @@
 /* APPLYING MEDIA QUERIES - NAV */
 @media (max-width: 768px) {
   .navbar {
-    background-color: $main-color;
+    background-color:  vars.$main-color;
   }
 
   .navbar__menu-list {
     display: none;
     position: absolute;
-    background-color: $main-color; // Use the variable directly
+    background-color:  vars.$main-color; // Use the variable directly
     right: 0;
     left: 0;
     text-align: center;
