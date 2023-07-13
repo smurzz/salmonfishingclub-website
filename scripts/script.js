@@ -43,19 +43,9 @@
     });
 
     const articles = Array.from(document.getElementsByClassName("article__description"));
-    // console.log(articles);
-
-    // data-attributes auslesen
-    articles.forEach(article => {
-        console.log(article.dataset);
-        console.log(article.dataset.section);
-    });
-    console.clear();
 
     // callback deklarieren
     function loadArticles(entries){
-        console.log("is visible");
-        console.log(entries);
         const[entry] = entries;
 
         if(entry.isIntersecting){
@@ -77,17 +67,17 @@
     articles.forEach(article => {
         observer.observe(article);
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const text = heading.textContent;
+        heading.textContent = '';
+    
+        console.log(text);
+        for (let i = 0; i < text.length; i++) {
+            const span = document.createElement('span');
+            span.textContent = text[i];
+            span.style.setProperty('--index', i);
+            heading.appendChild(span);
+        }
+    });
 })();
-
-document.addEventListener('DOMContentLoaded', function() {
-    //const animatedText = document.getElementById('animatedText');
-    const text = heading.textContent;
-    heading.textContent = '';
-
-    for (let i = 0; i < text.length; i++) {
-        const span = document.createElement('span');
-        span.textContent = text[i];
-        span.style.setProperty('--index', i);
-        heading.appendChild(span);
-    }
-});
