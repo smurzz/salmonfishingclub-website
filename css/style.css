@@ -206,6 +206,17 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+header h1 span {
+  display: inline-block;
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: calc(var(--index) * 0.2s);
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
 
 /* 13-15. Table styles */
 table {
