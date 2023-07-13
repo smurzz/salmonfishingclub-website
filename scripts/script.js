@@ -72,7 +72,6 @@
         const text = heading.textContent;
         heading.textContent = '';
     
-        console.log(text);
         for (let i = 0; i < text.length; i++) {
             const span = document.createElement('span');
             span.textContent = text[i];
