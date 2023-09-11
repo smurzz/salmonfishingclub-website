@@ -1,16 +1,51 @@
 @use '../base/vars';
 
 /* Form */
+.form {
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+}
+
+.form *{
+  outline: none;
+}
+
+
+/* loading gif*/
+.form_body {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.9) url("../images/loading.gif") center / 150px no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+  }
+/*  class _sending*/
+  &._sending::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 form {
-  background:  vars.$secondary-color;
+  position: relative;
+  background-color: vars.$secondary-color;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   margin: 10px auto;
+  padding-left: 10px;
   border-radius: 8px;
+
+
   fieldset {
     border: none;
   }
   legend {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   label {
     display: block;
@@ -26,36 +61,169 @@ form {
     padding: 10px;
     width: 100%;
     background-color: hsl(30, 6%, 86%);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     &:focus {
       background: hsl(30, 6%, 86%);
     }
   }
-  input[type=radio] {
-    accent-color:  vars.$main-color;
+  textarea.form_input {
+    min-height: 120px;
+    resize: vertical;
+    padding: 20px;
   }
-  .article__input-radio {
-    display: inline-block;
-    margin-right: 2rem;
+
+
+
+}
+.form_input {
+  cursor: pointer;
+  &:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
-  .article__buttons {
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"]{
-      position: relative;
-      display: block;
-      font-family:  vars.$main-font;
-      font-size:  vars.$basic-font-size;
-      padding: 1rem 2rem 1rem 2rem;
+  &._error {
+    box-shadow: 0 0 15px red;
+  }
+}
+
+.form_button-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding-right: 10px;
+}
+
+.form_button {
+  flex: 1; /* Distribute available space equally among buttons */
+  width: 30%; /* Adjust width as needed */
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  background-color: vars.$main-color;
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 200;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 5px 0 #161b13;
+  transition: background-color 0.5s ease 0s;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    background-color: hsl(341, 27%, 20%);
+  }
+
+  &:active {
+    top: 3px;
+    box-shadow: 0 2px 0 #161b13;
+  }
+}
+.select_oneOption{
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+  &:focus{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+}
+.options{
+  padding: 10px 0px 0px 0px;
+}
+
+.options_item {
+  margin: 0 0 10px 0;
+}
+
+.options_input {
+  display: none;
+  &:checked + .options_label::after {
+    transform: scale(1);
+  }
+}
+
+.options_label {
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 140%;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: hsl(30, 6%, 86%);
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+  }
+
+  &::after {
+    transition: transform 0.5s ease 0s;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background-color: vars.$main-color;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+}
+
+
+.checkbox {
+  &._error {
+    .checkbox_label::before {
+      box-shadow: 0 0 15px red;
+    }
+  }
+  &_input {
+    display: none;
+    &:checked + .checkbox_label::after {
+      transform: scale(1);
+    }
+  }
+
+  &_label {
+    font-size: 16px;
+    line-height: 140%;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      align-self: flex-start;
+      flex: 0 0 24px;
+      height: 24px;
+      background-color: hsl(30, 6%, 86%);
       border-radius: 4px;
-      color:  vars.$secondary-color;
-      margin: 0 auto;
-      background:  vars.$main-color;
-      width: 20rem;
-      margin-bottom: 10px;
-      &:hover {
-        background: hsl(345, 26%, 23%);
-      }
+      margin: 0px 10px 0px 0px;
+    }
+
+    &::after {
+      transition: transform 0.5s ease 0s;
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      background-color: vars.$main-color;
+      border-radius: 4px;
+      transform: scale(0);
     }
   }
 }
+
+
+
+

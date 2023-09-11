@@ -6,7 +6,7 @@
     <title>Salmon Fishing Club</title>
     <meta name="author" content="Sofya Murzakova, Komola Benzinger">
     <meta name="date" content="2023-04-11">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Lightbox CSS -->
     <link rel="stylesheet" href="lightbox2-dev/dist/css/lightbox.min.css">
     <!-- stylesheet -->
@@ -20,7 +20,7 @@
 <header class="header">
     <img id="banner_img" src="images/Reiseziele.jpeg" alt="Banner Start" class="header__banner-img">
     <!--images/Argentinien/10.sea-trout/Rio-Gallegos-Scenery-shot-Argentina.jpeg-->
-    <h1 class="header__title" id="animatedText">Salmon_Fishing_Club</h1>
+    <h1 class="header__title" id="animatedText">Salmon Fishing Club</h1>
     <nav class="navbar">
         <a href="/" class="navbar__logo">
             <img id="logo_img" src="images/logo.png" alt="Salmonfishingclub Logo" class="navbar__logo-img">
@@ -1934,62 +1934,90 @@
             erreichen oder das Formular unten ausfüllen.</p>
         <p class="article__paragraph">Bitte füllen Sie alle Felder aus, um die Verarbeitung Ihrer
             Nachricht und Feedback für Sie zu beschleunigen.</p>
-        <form id="form"  class="article__form">
-            <fieldset class="article__user-details">
-                <legend class="article__legend">Ihre Daten</legend>
-                <input id="fName" type="text" size="30" maxlength="30" placeholder="Vorname*"
-                       pattern="^[A-Z][a-z]{1,25}" name="Vorname" required class="article__input">
-                <input id="lName" type="text" size="30" minlength="3" maxlength="30" placeholder="Nachname*"
-                       pattern="^[A-Z][a-z]{1,25}" name="Nachname" required class="article__input">
-                <input id="mail" type="email" size="30" maxlength="30" placeholder="Email"
-                       pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required class="article__input">
-            </fieldset>
-            <fieldset class="article__user-details">
-                <legend class="article__legend">Haben Sie bereits Erfahrung mit unseren Dienstleistungen gemacht?</legend>
-                <label class="article__input-radio" for="yes">
-                    <input id="yes" type="radio" name="citizenship" value="y" class="article__radio-input">
-                    ja
-                </label>
-                <label class="article__input-radio" for="no">
-                    <input id="no" type="radio" name="citizenship" value="n" class="article__radio-input">
-                    nein
-                </label>
-            </fieldset>
-            <fieldset class="article__user-details">
-                <legend class="article__legend">Welche Sprache sprechen Sie?</legend>
-                <select id="language" class="article__select-lang">
-                    <option value="german" class="article__option">Deutsch</option>
-                    <option value="english" class="article__option">Englisch</option>
-                    <option value="russian" class="article__option">Russisch</option>
-                    <option value="spanish" class="article__option">Spanisch</option>
-                </select>
-            </fieldset>
-            <fieldset class="article__user-details">
-                <label for="destinations"  class="article__countries">Wählen Sie Ihre Reiseziele</label>
-                <input id="destinations" type="text" list="countries" class="article__input">
-                <datalist id="countries" class="article__datalist">
-                    <option value="Argentinien" class="article__option">
-                    <option value="Chile" class="article__option">
-                    <option value="Russland" class="article__option">
-                    <option value="Bijagos" class="article__option"></option>
-                </datalist>
-            </fieldset>
-            <fieldset class="article__user-details">
-                <legend class="article__legend">Wählen Sie Ihr geplantes Datum der Reise</legend>
-                <input type="date" id="start-date" name="trip-start" class="article__input">
-            </fieldset>
-            <fieldset>
-                <legend class="article__legend">Ihre Nachricht</legend>
-                <textarea id="msg" placeholder="Ihre Nachricht.." class="article__textarea"></textarea>
-            </fieldset>
-            <br>
-            <p class="article__paragraph">* - Pflichtfelder</p>
-            <div class="article__buttons">
-                <input class="button-form" type="submit" class="article__button-input">
-                <input class="button-form" type="reset" class="article__button-input">
+        <div class="wrapper">
+            <div class="form">
+                <form action="#" id="form"  class="form_body">
+                    <fieldset class="form__user-details">
+                        <legend class="form_title"><br>Ihre Daten</legend>
+                        <div class="form_item">
+                            <input id="formFName" type="text" size="30" maxlength="30" placeholder="Vorname*"
+                                   name="firstname"  class="form_input _req _formName">
+                            <input id="formLName" type="text" size="30" minlength="3" maxlength="30" placeholder="Nachname*"
+                                   name="surname" class="form_input _req _formName">
+                            <input id="mail" type="text" size="30" maxlength="30" placeholder="Email*"
+                                   name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"  class="form_input _req _email">
+                        </div>
+                        <div class="form_item">
+                            <legend class="form_label">Haben Sie bereits Erfahrung mit unseren Dienstleistungen gemacht?</legend>
+                            <div class="options">
+                                <div class="options_item">
+                                    <input id="yesAnswer" type="radio" name="oldClient" value="yes" class="options_input" checked>
+                                    <label class="options_label" for="yesAnswer"><span>ja</span></label>
+                                </div>
+                                <div class="options_item">
+                                    <input id="noAnswer" type="radio" name="oldClient" value="no" class="options_input">
+                                    <label class="options_label" for="noAnswer"><span>nein</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="form_item">
+                        <legend class="form_label">Welche Sprache sprechen Sie?</legend>
+                        <select id="language" name="chosenLanguage" class="select_oneOption">
+                            <option value="german" class="select_option">Deutsch</option>
+                            <option value="english" class="select_option">Englisch</option>
+                            <option value="russian" class="select_option">Russisch</option>
+                            <option value="spanish" class="select_option">Spanisch</option>
+                        </select>
+                    </div>
+                    <div class="form_item">
+                        <label for="destinations"  class="article__countries">Wählen Sie Ihre Reiseziele</label>
+                        <input id="destinations" type="text" list="countries" class="form_input">
+                        <datalist id="countries" name="destination" class="article__datalist">
+                            <option value="Argentinien" class="article__option">
+                            <option value="Chile" class="article__option">
+                            <option value="Russland" class="article__option">
+                            <option value="Bijagos" class="article__option"></option>
+                        </datalist>
+                    </div>
+                        <div class="form_item">
+                            <legend class="form_label">Wählen Sie die gewünschte Jahreszeit der Reise</legend>
+                            <select id="desiredSeason" name="season" class="select_oneOption">
+                                <option value="winter" class="select_option">Winter</option>
+                                <option value="spring" class="select_option">Frühling</option>
+                                <option value="summer" class="select_option">Sommer</option>
+                                <option value="autumn" class="select_option">Herbst</option>
+                            </select>
+                        </div>
+                        <!--<div class="form_item">
+                            <legend class="form_label">Wählen Sie Ihr geplantes Datum der Reise</legend>
+                            <input type="date" id="start-date" name="trip-start" class="form_input">
+                        </div>-->
+                        <div class="form_item">
+                            <legend class="article__legend">Ihre Nachricht</legend>
+                            <textarea name="message" id="msg" placeholder="Ihre Nachricht.." class="form_input"></textarea>
+                        </div>
+                            <div class="form_item">
+                                <div class="checkbox">
+                                    <input id="formAgreement" type="checkbox" name="agreement" class="checkbox_input _req" checked>
+                                    <label for="formAgreement" class="checkbox_label"><span>Ich bin damit einverstanden, dass meine Daten zur Kontaktaufnahme verwendet werden.*</span></label>
+                                </div>
+                            </div>
+                            <p class="form_paragraph" id ="requiredFields">* - Pflichtfelder</p>
+                        </fieldset>
+                        <div class="form_button-container">
+                            <button type="submit" class="form_button">Senden</button>
+                            <button type="reset" class="form_button">Zurücksetzen</button>
+                        </div>
+                        <!--
+                        <div class="form_buttons">
+                            <input class="button-form" type="submit" class="article__button-input">
+                            <input class="button-form" type="reset" class="article__button-input">
+                        </div>-->
+                </form>
             </div>
-        </form>
+        </div>
     </article>
+
 </main>
 <!-- jQuery CDN Link -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -1998,6 +2026,8 @@
 <script src="lightbox2-dev/dist/js/lightbox.min.js"></script>
 <!-- Custom.js -->
 <script src="scripts/script.js"></script>
+<script src="scripts/form.js"></script>
+
 </body>
 
 </html>
